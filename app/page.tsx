@@ -18,7 +18,8 @@ export const generateMetadata = async () => {
       openGraph: {
         title: `Portfolio - ${gitHubUser["name"]}`,
         description: `Welcome to the portfolio of ${gitHubUser["name"]}, a ${gitHubUser["bio"]} based in ${gitHubUser["location"]}. Explore my projects and skills.`,
-        images: [{url: gitHubUser["avatar_url"]}]
+        images: [{url: gitHubUser["avatar_url"]}],
+        url: `${gitHubUser["html_url"]}`
       },
       twitter: {
         title: `Portfolio - ${gitHubUser["name"]}`,
@@ -36,6 +37,7 @@ export const generateMetadata = async () => {
 const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
+    console.log(gitHubUser);
     const gitHubUserRepos = await getGitHubUserRepos();
     return <>
       <GitHubUser gitHubUser={gitHubUser}/>
