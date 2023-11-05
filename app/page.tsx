@@ -37,7 +37,6 @@ export const generateMetadata = async () => {
 const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
-    console.log(gitHubUser);
     const gitHubUserRepos = await getGitHubUserRepos();
     return <>
       <GitHubUser gitHubUser={gitHubUser}/>
