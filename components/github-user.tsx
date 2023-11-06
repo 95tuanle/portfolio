@@ -4,11 +4,11 @@ import {TbBrandGithub, TbBrandLeetcode, TbBrandLinkedin, TbBrandX, TbMail, TbPho
 const GitHubUser = ({gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, iconSize}: any) => <div className="p-3">
   <div className="flex items-center space-x-3">
     <Image
-      className="rounded-full w-36"
+      className="rounded-full w-32 h-32"
       src={gitHubUser["avatar_url"]}
       alt="user avatar"
-      width={144}
-      height={144}
+      width={300}
+      height={300}
     />
     <div>
       <h1 className="text-3xl font-semibold">{gitHubUser.name}</h1>
