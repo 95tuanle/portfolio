@@ -15,12 +15,14 @@ const GitHubUser = ({gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, iconSize
       <p className="text-gray-300">{gitHubUser.bio}</p>
       <p className="text-gray-300">{gitHubUser.location}</p>
       <div className="flex items-center space-x-3">
-        <a href={linkedInUrl} target={"_blank"}><TbBrandLinkedin size={iconSize}/></a>
-        <a href={gitHubUser.html_url} target={"_blank"}><TbBrandGithub size={iconSize}/></a>
-        <a href={leetCodeUrl} target={"_blank"}><TbBrandLeetcode size={iconSize}/></a>
-        <a href={`https://x.com/${gitHubUser.twitter_username}`} target={"_blank"}><TbBrandX size={iconSize}/></a>
-        <a href={`mailto:${gitHubUser.email}`} target={"_blank"}><TbMail size={iconSize}/></a>
-        <a href={`tel:${phoneNumber}`} target={"_blank"}><TbPhone size={iconSize}/></a>
+        <a href={linkedInUrl} target={"_blank"} aria-label={"LinkedIn Profile"}><TbBrandLinkedin size={iconSize}/></a>
+        <a href={gitHubUser.html_url} target={"_blank"} aria-label={"GitHub Profile"}><TbBrandGithub
+          size={iconSize}/></a>
+        <a href={leetCodeUrl} target={"_blank"} aria-label={"LeetCode Profile"}><TbBrandLeetcode size={iconSize}/></a>
+        <a href={`https://x.com/${gitHubUser.twitter_username}`} target={"_blank"} aria-label={"X Profile"}><TbBrandX
+          size={iconSize}/></a>
+        <a href={`mailto:${gitHubUser.email}`} target={"_blank"} aria-label={"Send An Email"}><TbMail size={iconSize}/></a>
+        <a href={`tel:${phoneNumber}`} target={"_blank"} aria-label={"Call Me"}><TbPhone size={iconSize}/></a>
       </div>
     </div>
   </div>
