@@ -9,8 +9,8 @@ const manifest = async () => {
       description: `Welcome to the portfolio of ${gitHubUser["name"]}, a ${gitHubUser["bio"]} based in ${gitHubUser["location"]}. Explore my projects and skills.`,
       start_url: '/',
       display: 'standalone',
-      background_color: 'rgba(255,255,255,0)',
-      theme_color: 'rgba(255,255,255,0)',
+      background_color: 'rgb(0,0,0)',
+      theme_color: 'rgb(0,0,0)',
       icons: [{src: gitHubUser["avatar_url"], sizes: 'any', type: 'image/x-icon', purpose: 'any maskable'}]
     }
   } catch (error) {
