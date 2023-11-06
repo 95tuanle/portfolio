@@ -46,7 +46,7 @@ const Page = async () => {
     return <>
       <GitHubUser gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl}
                   linkedInUrl={linkedInUrl} iconSize={iconSize}/>
-      <GithubUserRepos gitHubUserRepos={gitHubUserRepos}/>
+      {/*<GithubUserRepos gitHubUserRepos={gitHubUserRepos}/>*/}
       <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber}/>
     </>;
   } catch (error) {
