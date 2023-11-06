@@ -1,11 +1,13 @@
-import {Octokit} from "@octokit/core";
+import {request} from "@octokit/request";
 
-const octokit = new Octokit({auth: process.env.GITHUB_TOKEN});
+const requestWithAuth = request.defaults({
+  headers: {authorization: `token ${process.env.GITHUB_TOKEN}`}
+});
 
 export const getGitHubUser = async () => {
   try {
-    const gitHubUser = await octokit.request('GET /user');
-    return gitHubUser.data;
+    const {data} = await requestWithAuth('GET /user');
+    return data;
   } catch (error) {
     throw error;
   }
@@ -13,10 +15,10 @@ export const getGitHubUser = async () => {
 
 export const getGitHubUserRepos = async () => {
   try {
-    const gitHubUserRepos = await octokit.request('GET /user/repos', {
-      affiliation: 'owner', sort: 'updated', per_page: 333,
+    const {data} = await requestWithAuth('GET /user/repos', {
+      affiliation: 'owner', sort: 'updated', per_page: 3
     });
-    return gitHubUserRepos.data;
+    return data;
   } catch (error) {
     throw error;
   }

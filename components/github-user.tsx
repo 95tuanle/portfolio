@@ -1,7 +1,8 @@
 import Image from "next/image";
+import {TbBrandGithub, TbBrandLeetcode, TbBrandLinkedin, TbBrandX, TbMail, TbPhone} from "react-icons/tb";
 
-const GitHubUser = ({gitHubUser}: any) => <div className="flex justify-center">
-  <div className="flex flex-col items-center mt-10">
+const GitHubUser = ({gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, iconSize}: any) => <div className="p-3">
+  <div className="flex items-center space-x-3">
     <Image
       className="rounded-full w-36"
       src={gitHubUser["avatar_url"]}
@@ -9,28 +10,18 @@ const GitHubUser = ({gitHubUser}: any) => <div className="flex justify-center">
       width={144}
       height={144}
     />
-    <div className="mt-4">
-      <p className="text-2xl font-bold">{gitHubUser["name"]}</p>
-      <p className="text-gray-500">{gitHubUser["bio"]}</p>
-    </div>
-    <div className="flex mt-4">
-      <p className="text-gray-500">Location: </p>
-      <p className="ml-2">{gitHubUser["location"]}</p>
-    </div>
-    <div className="flex mt-4">
-      <p className="text-gray-500">Twitter: </p>
-      <a
-        className="ml-2"
-        href={`https://twitter.com/${gitHubUser["twitter_username"]}`}
-      >
-        {gitHubUser["twitter_username"]}
-      </a>
-    </div>
-    <div className="flex mt-4">
-      <p className="text-gray-500">Github: </p>
-      <a className="ml-2" href={gitHubUser["html_url"]}>
-        {gitHubUser["html_url"]}
-      </a>
+    <div>
+      <h1 className="text-3xl font-semibold">{gitHubUser.name}</h1>
+      <p className="text-gray-300">{gitHubUser.bio}</p>
+      <p className="text-gray-300">{gitHubUser.location}</p>
+      <div className="flex items-center space-x-3">
+        <a href={linkedInUrl} target={"_blank"}><TbBrandLinkedin size={iconSize}/></a>
+        <a href={gitHubUser.html_url} target={"_blank"}><TbBrandGithub size={iconSize}/></a>
+        <a href={leetCodeUrl} target={"_blank"}><TbBrandLeetcode size={iconSize}/></a>
+        <a href={`https://x.com/${gitHubUser.twitter_username}`} target={"_blank"}><TbBrandX size={iconSize}/></a>
+        <a href={`mailto:${gitHubUser.email}`} target={"_blank"}><TbMail size={iconSize}/></a>
+        <a href={`tel:${phoneNumber}`} target={"_blank"}><TbPhone size={iconSize}/></a>
+      </div>
     </div>
   </div>
 </div>;
