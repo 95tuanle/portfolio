@@ -16,7 +16,7 @@ export const getGitHubUser = async () => {
 export const getGitHubUserRepos = async () => {
   try {
     const {data} = await requestWithAuth('GET /user/repos', {
-      affiliation: 'owner', sort: 'updated', per_page: 3
+      affiliation: 'owner', sort: 'updated', per_page: 333
     });
     return data;
   } catch (error) {
