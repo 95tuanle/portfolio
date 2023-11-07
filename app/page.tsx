@@ -39,7 +39,7 @@ const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
     const gitHubUserRepos = await getGitHubUserRepos();
-    console.log(gitHubUserRepos);
+    // console.log(gitHubUserRepos);
     const phoneNumber = `+1 (647) 510-2746`;
     const leetCodeUrl = `https://leetcode.com/95tuanle/`;
     const linkedInUrl = `https://www.linkedin.com/in/95tuanle/`;
