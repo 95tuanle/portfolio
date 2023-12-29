@@ -41,12 +41,11 @@ const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
     const gitHubUserRepos = await getGitHubUserRepos();
-    // console.log(gitHubUserRepos);
-    const phoneNumber = `+1 (647) 510-2746`;
-    const leetCodeUrl = `https://leetcode.com/95tuanle/`;
-    const linkedInUrl = `https://www.linkedin.com/in/95tuanle/`;
-    // const wellfoundUrl = `https://wellfound.com/95tuanle`;
-    const stackOverflowUrl = `https://stackoverflow.com/users/9129836/95tuanle`;
+    const phoneNumber = '+1 (647) 510-2746';
+    const leetCodeUrl = 'https://leetcode.com/95tuanle/';
+    const linkedInUrl = 'https://www.linkedin.com/in/95tuanle/';
+    const stackOverflowUrl = 'https://stackoverflow.com/users/9129836/95tuanle';
+    // const wellfoundUrl = 'https://wellfound.com/95tuanle';
     const iconSize = 30;
     return <>
       <div className={"text-black text-center bg-yellow-500 p-3 rounded"}>Work in Progress</div>
