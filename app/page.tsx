@@ -3,6 +3,8 @@ import GitHubUser from "@/components/github-user";
 import GithubUserRepos from "@/components/github-user-repos";
 import Footer from "@/components/footer";
 
+export const revalidate = 3600;
+
 export const generateMetadata = async () => {
   try {
     const gitHubUser = await getGitHubUser();
@@ -39,7 +41,7 @@ const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
     const gitHubUserRepos = await getGitHubUserRepos();
-    // console.log(gitHubUser);
+    // console.log(gitHubUserRepos);
     const phoneNumber = `+1 (647) 510-2746`;
     const leetCodeUrl = `https://leetcode.com/95tuanle/`;
     const linkedInUrl = `https://www.linkedin.com/in/95tuanle/`;
