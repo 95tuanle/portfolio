@@ -11,20 +11,20 @@ import {
 // import {SiWellfound} from "react-icons/si";
 
 const GitHubUser = ({
-                      gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, stackOverflowUrl, iconSize //, wellfoundUrl
-                    }: any) => <div className="p-3">
-  <div className="flex items-center space-x-3">
-    <Image className="rounded-full w-32 h-32" src={gitHubUser["avatar_url"]} alt="user avatar" width={128}
-           height={128}/>
+                      gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, stackOverflowUrl, iconSize // , wellfoundUrl
+                    }: any) => <div className="flex flex-col items-center p-3">
+  <div className="flex flex-col items-center space-x-3 space-y-3">
+    <Image className="rounded-full w-36 h-36" src={gitHubUser["avatar_url"]} alt="user avatar" width={144}
+           height={144}/>
     <div>
       <h1 className="text-3xl font-semibold">{gitHubUser["name"]}</h1>
       <p className="text-gray-300">{gitHubUser["bio"]}</p>
       <p className="text-gray-300">{gitHubUser["location"]}</p>
     </div>
   </div>
-  <br/>
-  <div className="flex items-center space-x-3">
-    <a href={linkedInUrl} target={"_blank"} aria-label={"LinkedIn Profile"}><TbBrandLinkedin size={iconSize}/></a>
+  <div className="flex space-x-3 space-y-3">
+    <a className="mt-3" href={linkedInUrl} target={"_blank"} aria-label={"LinkedIn Profile"}><TbBrandLinkedin
+      size={iconSize}/></a>
     <a href={gitHubUser["html_url"]} target={"_blank"} aria-label={"GitHub Profile"}><TbBrandGithub
       size={iconSize}/></a>
     <a href={leetCodeUrl} target={"_blank"} aria-label={"LeetCode Profile"}><TbBrandLeetcode size={iconSize}/></a>
