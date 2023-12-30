@@ -14,8 +14,8 @@ const GitHubUser = ({
                       gitHubUser, phoneNumber, leetCodeUrl, linkedInUrl, stackOverflowUrl, iconSize // , wellfoundUrl
                     }: any) => <div className="flex flex-col items-center p-3">
   <div className="flex flex-col items-center space-x-3 space-y-3">
-    <Image className="rounded-full w-32 h-32" src={gitHubUser["avatar_url"]} alt="user avatar" width={128}
-           height={128}/>
+    <Image className="rounded-full w-36 h-36" src={gitHubUser["avatar_url"]} alt="user avatar" width={144}
+           height={144}/>
     <div>
       <h1 className="text-3xl font-semibold">{gitHubUser["name"]}</h1>
       <p className="text-gray-300">{gitHubUser["bio"]}</p>
