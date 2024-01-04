@@ -45,12 +45,15 @@ const Page = async () => {
     const leetCodeUrl = 'https://leetcode.com/95tuanle/';
     const linkedInUrl = 'https://www.linkedin.com/in/95tuanle/';
     const stackOverflowUrl = 'https://stackoverflow.com/users/9129836/95tuanle';
-    // const wellfoundUrl = 'https://wellfound.com/95tuanle';
-    const iconSize = 30;
+    const wellfoundUrl = 'https://wellfound.com/95tuanle';
+    const redditUrl = 'https://www.reddit.com/user/95tuanle';
+    const soundCloudUrl = 'https://soundcloud.com/95tuanle';
+    const iconSize = 28;
     return <>
       <div className={"text-black text-center bg-yellow-500 p-3 rounded"}>Work in Progress</div>
       <GitHubUser gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl} linkedInUrl={linkedInUrl}
-                  stackOverflowUrl={stackOverflowUrl} iconSize={iconSize} // wellfoundUrl={wellfoundUrl}
+                  stackOverflowUrl={stackOverflowUrl} wellfoundUrl={wellfoundUrl} redditUrl={redditUrl}
+                  soundCloudUrl={soundCloudUrl} iconSize={iconSize}
       />
       <GithubUserRepos gitHubUserRepos={gitHubUserRepos}/>
       <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber}/>
