@@ -26,9 +26,9 @@ const GitHubUser = ({
     <Image priority={true} className="rounded-full w-36 h-36" src={gitHubUser["avatar_url"]} alt="user avatar"
            width={144} height={144}/>
     <div>
-      <h1 className="text-3xl font-semibold">{gitHubUser["name"]}</h1>
-      <p className="text-gray-300">{gitHubUser["bio"]}</p>
-      <p className="text-gray-300">{gitHubUser["location"]}</p>
+      <div className="text-3xl font-semibold">{gitHubUser["name"]}</div>
+      <div className="text-gray-300">{gitHubUser["bio"]}</div>
+      <div className="text-gray-300">{gitHubUser["location"]}</div>
     </div>
   </div>
   <div className="flex space-x-3 space-y-3">

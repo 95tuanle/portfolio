@@ -1,4 +1,4 @@
-import {getGitHubUser} from "@/github";
+import {getGitHubUser} from "@/ultilities/github";
 
 const manifest = async () => {
   try {
