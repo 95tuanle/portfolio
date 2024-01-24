@@ -1,4 +1,4 @@
-import {getGitHubUser, getGitHubUserRepos} from "@/github";
+import {getGitHubUser, getGitHubUserRepos} from "@/ultilities/github";
 import GitHubUser from "@/components/github-user";
 import GithubUserRepos from "@/components/github-user-repos";
 import Footer from "@/components/footer";
@@ -50,7 +50,7 @@ const Page = async () => {
     const soundCloudUrl = 'https://soundcloud.com/95tuanle';
     const iconSize = 28;
     return <>
-      <div className={"text-black text-center bg-yellow-500 p-3 rounded"}>Work in Progress</div>
+      <div className="text-black text-center bg-yellow-500 p-3 rounded">Work in Progress</div>
       <GitHubUser gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl} linkedInUrl={linkedInUrl}
                   stackOverflowUrl={stackOverflowUrl} wellfoundUrl={wellfoundUrl} redditUrl={redditUrl}
                   soundCloudUrl={soundCloudUrl} iconSize={iconSize}
