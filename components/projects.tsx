@@ -1,5 +1,6 @@
 import Project from "@/components/project";
 import {getGitHubUserRepoFileContent} from "@/ultilities/github";
+import {parseGitHubReadmeMarkdown} from "@/ultilities/github-readme-markdown-parser";
 
 const Projects = ({gitHubUserRepos}: any) => <>
   <div className="text-3xl font-semibold p-3 m-3">Projects</div>
@@ -7,7 +8,10 @@ const Projects = ({gitHubUserRepos}: any) => <>
     if (gitHubUserRepo["name"] == gitHubUserRepo["owner"]["login"]) {
       try {
         const gitHubUserRepoReadmeFileContent = await getGitHubUserRepoFileContent(gitHubUserRepo["owner"]["login"], gitHubUserRepo["name"], "README.md");
-        // console.log(gitHubUserRepoReadmeFileContent);
+        if (typeof gitHubUserRepoReadmeFileContent === 'string') {
+          const gitHubUserRepoReadme = parseGitHubReadmeMarkdown(gitHubUserRepoReadmeFileContent);
+          // console.log(gitHubUserRepoReadme);
+        }
       } catch (error) {
         console.error(error)
       }
