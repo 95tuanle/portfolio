@@ -1,5 +1,5 @@
 const Footer = ({gitHubUser, phoneNumber}: any) => <footer className="p-3 text-center">
-  <a href={'/'} className="hover:underline"
+  <a href={"/"} className="hover:underline"
      aria-label={"Main page"}>&copy; {new Date().getFullYear()} {gitHubUser["name"]}</a>
   <p className="mb-3">
     <a href={`mailto:${gitHubUser["email"]}`} className="hover:underline">{gitHubUser["email"]}</a>

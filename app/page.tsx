@@ -1,6 +1,6 @@
 import {getGitHubUser, getGitHubUserRepos} from "@/ultilities/github";
-import GitHubUser from "@/components/github-user";
-import GithubUserRepos from "@/components/github-user-repos";
+import User from "@/components/user";
+import Projects from "@/components/projects";
 import Footer from "@/components/footer";
 
 export const revalidate = 3600;
@@ -41,21 +41,22 @@ const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
     const gitHubUserRepos = await getGitHubUserRepos();
-    const phoneNumber = '+1 (647) 510-2746';
-    const leetCodeUrl = 'https://leetcode.com/95tuanle/';
-    const linkedInUrl = 'https://www.linkedin.com/in/95tuanle/';
-    const stackOverflowUrl = 'https://stackoverflow.com/users/9129836/95tuanle';
-    const wellfoundUrl = 'https://wellfound.com/95tuanle';
-    const redditUrl = 'https://www.reddit.com/user/95tuanle';
-    const soundCloudUrl = 'https://soundcloud.com/95tuanle';
+    const phoneNumber = "+1 (647) 510-2746";
+    const leetCodeUrl = "https://leetcode.com/95tuanle/";
+    const linkedInUrl = "https://www.linkedin.com/in/95tuanle/";
+    const stackOverflowUrl = "https://stackoverflow.com/users/9129836/95tuanle";
+    const wellfoundUrl = "https://wellfound.com/95tuanle";
+    const redditUrl = "https://www.reddit.com/user/95tuanle";
+    const soundCloudUrl = "https://soundcloud.com/95tuanle";
     const iconSize = 28;
     return <>
       <div className="text-black text-center bg-yellow-500 p-3 rounded">Work in Progress</div>
-      <GitHubUser gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl} linkedInUrl={linkedInUrl}
-                  stackOverflowUrl={stackOverflowUrl} wellfoundUrl={wellfoundUrl} redditUrl={redditUrl}
-                  soundCloudUrl={soundCloudUrl} iconSize={iconSize}
+      <User gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl} linkedInUrl={linkedInUrl}
+            stackOverflowUrl={stackOverflowUrl} wellfoundUrl={wellfoundUrl} redditUrl={redditUrl}
+            soundCloudUrl={soundCloudUrl} iconSize={iconSize}
       />
-      <GithubUserRepos gitHubUserRepos={gitHubUserRepos}/>
+      {/*<Experience/>*/}
+      <Projects gitHubUserRepos={gitHubUserRepos}/>
       <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber}/>
     </>;
   } catch (error) {
