@@ -13,7 +13,7 @@ const Projects = ({gitHubUserRepos}: any) => <>
       }
     }
     return <Project gitHubUserRepo={gitHubUserRepo} key={gitHubUserRepo["id"]}/>
-  })};
+  })}
 </>;
 
 export default Projects;
