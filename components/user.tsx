@@ -11,17 +11,17 @@ import {
   SiX
 } from "react-icons/si";
 
-const GitHubUser = ({
-                      gitHubUser,
-                      phoneNumber,
-                      leetCodeUrl,
-                      linkedInUrl,
-                      stackOverflowUrl,
-                      wellfoundUrl,
-                      redditUrl,
-                      soundCloudUrl,
-                      iconSize
-                    }: any) => <div className="flex flex-col items-center p-3">
+const User = ({
+                gitHubUser,
+                phoneNumber,
+                leetCodeUrl,
+                linkedInUrl,
+                stackOverflowUrl,
+                wellfoundUrl,
+                redditUrl,
+                soundCloudUrl,
+                iconSize
+              }: any) => <div className="flex flex-col items-center p-3">
   <div className="flex flex-col items-center space-x-3 space-y-3">
     <Image priority={true} className="rounded-full w-36 h-36" src={gitHubUser["avatar_url"]} alt="user avatar"
            width={144} height={144}/>
@@ -50,4 +50,4 @@ const GitHubUser = ({
   </div>
 </div>;
 
-export default GitHubUser;
+export default User;

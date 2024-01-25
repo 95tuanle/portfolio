@@ -1,4 +1,4 @@
-const GitHubUserRepo = ({gitHubUserRepo}: any) => <div className="p-3 m-3">
+const Project = ({gitHubUserRepo}: any) => <div className="p-3 m-3">
   <h2 className="text-lg font-semibold mb-3">{gitHubUserRepo.name}</h2>
   <p className="text-gray-300 mb-3">{gitHubUserRepo.description}</p>
   <div className="flex items-center space-x-3">
@@ -41,4 +41,4 @@ const GitHubUserRepo = ({gitHubUserRepo}: any) => <div className="p-3 m-3">
   </div>
 </div>;
 
-export default GitHubUserRepo;
+export default Project;
