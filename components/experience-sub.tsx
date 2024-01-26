@@ -1,6 +1,6 @@
 import Responsibility from "@/components/responsibility";
 
-const ExperienceSub = ({experienceSub}: any) => <div className="p-3 m-3">
+const ExperienceSub = ({experienceSub}: any) => <div className="p-3 ml-6">
   <div className="text-lg font-semibold">{experienceSub["position"]}</div>
   <a className="hover:underline" href={experienceSub["companyUrl"]} target={"_blank"}
      aria-label={experienceSub["company"]}>{experienceSub["company"]}</a>
