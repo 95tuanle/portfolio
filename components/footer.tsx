@@ -4,7 +4,7 @@ const Footer = ({gitHubUser, phoneNumber}: any) => <footer className="p-3 text-c
   <p className="mb-3">
     <a href={`mailto:${gitHubUser["email"]}`} className="hover:underline">{gitHubUser["email"]}</a>
     <span className="mx-3">|</span>
-    <a href={`tel:${phoneNumber}`} className="hover:underline">{phoneNumber}</a>
+    <a href={phoneNumber} className="hover:underline">{phoneNumber.replace("tel:", "")}</a>
   </p>
 </footer>;
 
