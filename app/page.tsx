@@ -1,7 +1,10 @@
-import {getGitHubUser, getGitHubUserRepos} from "@/ultilities/github";
-import User from "@/components/user";
-import Projects from "@/components/projects";
+import Education from "@/components/education";
+import Experience from "@/components/experience";
 import Footer from "@/components/footer";
+import Projects from "@/components/projects";
+import User from "@/components/user";
+import {GitHubReadmeMarkdownJSON, parseGitHubReadmeMarkdown} from "@/ultilities/github-readme-markdown-parser";
+import {getGitHubUser, getGitHubUserRepoFileContent, getGitHubUserRepos} from "@/ultilities/github";
 
 export const revalidate = 3600;
 
@@ -41,21 +44,52 @@ const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
     const gitHubUserRepos = await getGitHubUserRepos();
-    const phoneNumber = "+1 (647) 510-2746";
-    const leetCodeUrl = "https://leetcode.com/95tuanle/";
-    const linkedInUrl = "https://www.linkedin.com/in/95tuanle/";
-    const stackOverflowUrl = "https://stackoverflow.com/users/9129836/95tuanle";
-    const wellfoundUrl = "https://wellfound.com/95tuanle";
-    const redditUrl = "https://www.reddit.com/user/95tuanle";
-    const soundCloudUrl = "https://soundcloud.com/95tuanle";
+    const gitHubUserRepoFileContent = await getGitHubUserRepoFileContent(gitHubUser["login"], gitHubUser["login"], "README.md");
     const iconSize = 28;
+    let phoneNumber: string | any;
+    let leetCodeUrl: string | any;
+    let linkedInUrl: string | any;
+    let stackOverflowUrl: string | any;
+    let wellfoundUrl: string | any;
+    let redditUrl: string | any;
+    let soundCloudUrl: string | any;
+    let gitHubReadmeMarkdownJSON: GitHubReadmeMarkdownJSON | any;
+    if (typeof gitHubUserRepoFileContent == "string") {
+      gitHubReadmeMarkdownJSON = parseGitHubReadmeMarkdown(gitHubUserRepoFileContent);
+      for (const gitHubReadmeMarkdownJSONContact of gitHubReadmeMarkdownJSON["contactInformation"]) {
+        switch (gitHubReadmeMarkdownJSONContact["type"]) {
+          case "Phone":
+            phoneNumber = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "LeetCode":
+            leetCodeUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "LinkedIn":
+            linkedInUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "Stack Overflow":
+            stackOverflowUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "Wellfound":
+            wellfoundUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "Reddit":
+            redditUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+          case "SoundCloud":
+            soundCloudUrl = gitHubReadmeMarkdownJSONContact["url"];
+            break;
+        }
+      }
+    }
     return <>
       <div className="text-black text-center bg-yellow-500 p-3 rounded">Work in Progress</div>
       <User gitHubUser={gitHubUser} phoneNumber={phoneNumber} leetCodeUrl={leetCodeUrl} linkedInUrl={linkedInUrl}
             stackOverflowUrl={stackOverflowUrl} wellfoundUrl={wellfoundUrl} redditUrl={redditUrl}
             soundCloudUrl={soundCloudUrl} iconSize={iconSize}
       />
-      {/*<Experience/>*/}
+      <Experience experience={gitHubReadmeMarkdownJSON["experience"]}/>
+      <Education education={gitHubReadmeMarkdownJSON["education"]}/>
       <Projects gitHubUserRepos={gitHubUserRepos}/>
       <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber}/>
     </>;

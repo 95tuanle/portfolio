@@ -1,16 +1,33 @@
-type Experience = {
-  company: string; companyUrl: string; position: string; location: string; duration: string; responsibilities: string[];
-};
+interface Experience {
+  company: string;
+  companyUrl: string;
+  position: string;
+  location: string;
+  duration: string;
+  responsibilities: string[];
+}
 
-type Education = { institution: string; institutionUrl: string; degree: string; location: string; duration: string; };
+interface Education {
+  institution: string;
+  institutionUrl: string;
+  degree: string;
+  location: string;
+  duration: string;
+}
 
-type Contact = { type: string; url: string; };
+interface Contact {
+  type: string;
+  url: string;
+}
 
-type gitHubReadmeMarkdownJSON = {
-  name: string; contactInformation: Contact[]; experience: Experience[]; education: Education[];
-};
+export interface GitHubReadmeMarkdownJSON {
+  name: string;
+  contactInformation: Contact[];
+  experience: Experience[];
+  education: Education[];
+}
 
-export const parseGitHubReadmeMarkdown = (markdown: string): gitHubReadmeMarkdownJSON => {
+export const parseGitHubReadmeMarkdown = (markdown: string): GitHubReadmeMarkdownJSON => {
   const lines = markdown.split('\n');
   const name = lines[0].replace('# ', '');
   const contactInformationStart = lines.indexOf('## Contact Information') + 1;
