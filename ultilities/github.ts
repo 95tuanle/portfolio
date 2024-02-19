@@ -14,17 +14,17 @@ export const getGitHubUser = cache(async () => {
 
 export const getGitHubUserRepos = cache(async () => {
   try {
-    const {data} = await requestWithAuth("GET /user/repos", {affiliation: "owner", sort: "updated", per_page: 333});
+    const {data} = await requestWithAuth("GET /user/repos", {affiliation: "owner", sort: "pushed", per_page: 333});
     return data;
   } catch (error) {
     throw error;
   }
 });
 
-export const getGitHubUserRepoFileContent = cache(async (login: any, name: any, path: any,) => {
+export const getGitHubUserRepoReadmeFileContent = cache(async (login: any, name: any) => {
   try {
-    const {data} = await requestWithAuth("GET /repos/{owner}/{repo}/contents/{path}", {
-      owner: login, repo: name, path: path, mediaType: {format: "raw"}
+    const {data} = await requestWithAuth("GET /repos/{owner}/{repo}/readme", {
+      owner: login, repo: name, mediaType: {format: "raw"}
     });
     return data;
   } catch (error) {
