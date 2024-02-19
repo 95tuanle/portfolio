@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 import Projects from "@/components/projects";
 import User from "@/components/user";
 import {GitHubReadmeMarkdownJSON, parseGitHubReadmeMarkdown} from "@/ultilities/github-readme-markdown-parser";
-import {getGitHubUser, getGitHubUserRepoFileContent, getGitHubUserRepos} from "@/ultilities/github";
+import {getGitHubUser, getGitHubUserRepoReadmeFileContent, getGitHubUserRepos} from "@/ultilities/github";
 
 export const revalidate = 3600;
 
@@ -43,8 +43,7 @@ export const generateMetadata = async () => {
 const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
-    const gitHubUserRepos = await getGitHubUserRepos();
-    const gitHubUserRepoFileContent = await getGitHubUserRepoFileContent(gitHubUser["login"], gitHubUser["login"], "README.md");
+    const [gitHubUserRepos, gitHubUserRepoFileContent] = await Promise.all([getGitHubUserRepos(), getGitHubUserRepoReadmeFileContent(gitHubUser["login"], gitHubUser["login"])]);
     const iconSize = 28;
     let phoneNumber: string | any;
     let leetCodeUrl: string | any;
