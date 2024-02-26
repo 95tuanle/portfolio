@@ -27,29 +27,48 @@ export interface GitHubReadmeMarkdownJSON {
   education: Education[];
 }
 
-export const parseGitHubReadmeMarkdown = (markdown: string): GitHubReadmeMarkdownJSON => {
+export const parseGitHubReadmeMarkdown = (
+  markdown: string,
+): GitHubReadmeMarkdownJSON => {
   const lines = markdown.split('\n');
   const name = lines[0].replace('# ', '');
   const contactInformationStart = lines.indexOf('## Contact Information') + 1;
   const experienceStart = lines.indexOf('## Experience');
   const educationStart = lines.indexOf('## Education');
-  const contactInformationLines = lines.slice(contactInformationStart, experienceStart).join(' | ').split(' | ');
+  const contactInformationLines = lines
+    .slice(contactInformationStart, experienceStart)
+    .join(' | ')
+    .split(' | ');
   const experienceLines = lines.slice(experienceStart + 1, educationStart);
   const educationLines = lines.slice(educationStart + 1);
-  const contactInformation: Contact[] = contactInformationLines.map(contact => {
-    const [type, url] = contact.split('](');
-    const cleanedType = type.replace('[', '');
-    return {type: cleanedType.startsWith('+') ? 'Phone' : cleanedType, url: url ? url.replace(')', '') : ''};
-  });
+  const contactInformation: Contact[] = contactInformationLines.map(
+    (contact) => {
+      const [type, url] = contact.split('](');
+      const cleanedType = type.replace('[', '');
+      return {
+        type: cleanedType.startsWith('+') ? 'Phone' : cleanedType,
+        url: url ? url.replace(')', '') : '',
+      };
+    },
+  );
   const experience: Experience[] = [];
   let currentExperience: Experience | null = null;
   for (const line of experienceLines) {
     if (line.startsWith('### ')) {
       if (currentExperience) experience.push(currentExperience);
-      currentExperience = {company: '', companyUrl: '', position: '', location: '', duration: '', responsibilities: []};
+      currentExperience = {
+        company: '',
+        companyUrl: '',
+        position: '',
+        location: '',
+        duration: '',
+        responsibilities: [],
+      };
     } else if (currentExperience) {
       if (line.startsWith('- Company: ')) {
-        const [company, companyUrl] = line.replace('- Company: ', '').split('](');
+        const [company, companyUrl] = line
+          .replace('- Company: ', '')
+          .split('](');
         currentExperience.company = company.replace('[', '');
         currentExperience.companyUrl = companyUrl.replace(')', '');
       } else if (line.startsWith('- Position: ')) {
@@ -71,10 +90,18 @@ export const parseGitHubReadmeMarkdown = (markdown: string): GitHubReadmeMarkdow
   for (const line of educationLines) {
     if (line.startsWith('### ')) {
       if (currentEducation) education.push(currentEducation);
-      currentEducation = {institution: '', institutionUrl: '', degree: '', location: '', duration: ''};
+      currentEducation = {
+        institution: '',
+        institutionUrl: '',
+        degree: '',
+        location: '',
+        duration: '',
+      };
     } else if (currentEducation) {
       if (line.startsWith('- Institution: ')) {
-        const [institution, institutionUrl] = line.replace('- Institution: ', '').split('](');
+        const [institution, institutionUrl] = line
+          .replace('- Institution: ', '')
+          .split('](');
         currentEducation.institution = institution.replace('[', '');
         currentEducation.institutionUrl = institutionUrl.replace(')', '');
       } else if (line.startsWith('- Degree: ')) {
@@ -87,5 +114,5 @@ export const parseGitHubReadmeMarkdown = (markdown: string): GitHubReadmeMarkdow
     }
   }
   if (currentEducation) education.push(currentEducation);
-  return {name, contactInformation, experience, education,};
+  return { name, contactInformation, experience, education };
 };
