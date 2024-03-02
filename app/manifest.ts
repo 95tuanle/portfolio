@@ -1,5 +1,7 @@
 import { getGitHubUser } from '@/ultilities/github';
 
+export const revalidate = 3600;
+
 const manifest = async () => {
   try {
     const gitHubUser = await getGitHubUser();
