@@ -10,20 +10,6 @@ const nextConfig = {
       },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value:
-              'public, max-age=Cache-Control: max-age=31536000, must-revalidate',
-          },
-        ],
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
