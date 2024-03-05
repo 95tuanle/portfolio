@@ -3,7 +3,7 @@ const Footer = ({ gitHubUser, phoneNumber }: any) => (
     <a href={'/'} className="hover:underline py-4" aria-label={'Main page'}>
       &copy; {new Date().getFullYear()} {gitHubUser['name']}
     </a>
-    <p className="mb-3">
+    <p className="py-3">
       <a
         href={`mailto:${gitHubUser['email']}`}
         className="hover:underline py-4"
