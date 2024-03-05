@@ -25,7 +25,7 @@ const User = ({
   <div className="flex flex-col items-center p-3">
     <div className="flex flex-col items-center space-x-3 space-y-3">
       <div
-        className={`relative ${gitHubUser['hireable'] ? 'border-green-600 border-2 rounded-full' : ''}`}
+        className={`relative ${gitHubUser['hireable'] ? 'border-green-700 border-2 rounded-full' : ''}`}
       >
         <Image
           priority={true}
@@ -36,7 +36,7 @@ const User = ({
           height={144}
         />
         {gitHubUser['hireable'] && (
-          <span className="absolute bottom-0 right-0 bg-green-600 text-white rounded-full text-xs px-2 py-1">
+          <span className="absolute bottom-0 right-0 bg-green-700 text-white rounded-full text-xs px-2 py-1">
             Hireable
           </span>
         )}
