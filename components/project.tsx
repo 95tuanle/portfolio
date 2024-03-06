@@ -1,5 +1,4 @@
 const Project = ({ gitHubUserRepo }: any) => {
-  // console.log(gitHubUserRepo);
   return (
     <div className="p-3 ml-6">
       <a
@@ -10,7 +9,9 @@ const Project = ({ gitHubUserRepo }: any) => {
       >
         {gitHubUserRepo['name']}
       </a>
-      <div className="text-gray-300 mb-3">{gitHubUserRepo['description']}</div>
+      <div className="text-gray-700 dark:text-gray-300 mb-3">
+        {gitHubUserRepo['description']}
+      </div>
     </div>
   );
 };
