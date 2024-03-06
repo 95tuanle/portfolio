@@ -43,8 +43,12 @@ const User = ({
       </div>
       <div>
         <div className="text-3xl font-semibold">{gitHubUser['name']}</div>
-        <div className="text-gray-300">{gitHubUser['bio']}</div>
-        <div className="text-gray-300">{gitHubUser['location']}</div>
+        <div className="text-gray-700 dark:text-gray-300">
+          {gitHubUser['bio']}
+        </div>
+        <div className="text-gray-700 dark:text-gray-300">
+          {gitHubUser['location']}
+        </div>
       </div>
     </div>
     <div className="flex space-x-3 space-y-3">

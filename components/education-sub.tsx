@@ -9,8 +9,12 @@ const EducationSub = ({ educationSub }: any) => (
       {educationSub['institution']}
     </a>
     <div>{educationSub['degree']}</div>
-    <div className="text-gray-300">{educationSub['duration']}</div>
-    <div className="text-gray-300">{educationSub['location']}</div>
+    <div className="text-gray-700 dark:text-gray-300">
+      {educationSub['duration']}
+    </div>
+    <div className="text-gray-700 dark:text-gray-300">
+      {educationSub['location']}
+    </div>
   </div>
 );
 
