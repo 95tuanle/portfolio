@@ -53,7 +53,7 @@ const User = ({
     </div>
     <div className="flex space-x-3 space-y-3">
       <a
-        className="mt-3"
+        className="mt-3 transform transition-transform hover:scale-125"
         href={linkedInUrl}
         target={'_blank'}
         aria-label={'LinkedIn Profile'}
@@ -61,16 +61,23 @@ const User = ({
         <SiLinkedin size={iconSize} />
       </a>
       <a
+        className="transform transition-transform hover:scale-125"
         href={gitHubUser['html_url']}
         target={'_blank'}
         aria-label={'GitHub Profile'}
       >
         <SiGithub size={iconSize} />
       </a>
-      <a href={leetCodeUrl} target={'_blank'} aria-label={'LeetCode Profile'}>
+      <a
+        className="transform transition-transform hover:scale-125"
+        href={leetCodeUrl}
+        target={'_blank'}
+        aria-label={'LeetCode Profile'}
+      >
         <SiLeetcode size={iconSize} />
       </a>
       <a
+        className="transform transition-transform hover:scale-125"
         href={stackOverflowUrl}
         target={'_blank'}
         aria-label={'StackOverflow Profile'}
@@ -78,19 +85,31 @@ const User = ({
         <SiStackoverflow size={iconSize} />
       </a>
       <a
+        className="transform transition-transform hover:scale-125"
         href={`https://x.com/${gitHubUser['twitter_username']}`}
         target={'_blank'}
         aria-label={'X Profile'}
       >
         <SiX size={iconSize} />
       </a>
-      <a href={redditUrl} target={'_blank'} aria-label={'Reddit Profile'}>
+      <a
+        className="transform transition-transform hover:scale-125"
+        href={redditUrl}
+        target={'_blank'}
+        aria-label={'Reddit Profile'}
+      >
         <SiReddit size={iconSize} />
       </a>
-      <a href={wellfoundUrl} target={'_blank'} aria-label={'Wellfound Profile'}>
+      <a
+        className="transform transition-transform hover:scale-125"
+        href={wellfoundUrl}
+        target={'_blank'}
+        aria-label={'Wellfound Profile'}
+      >
         <SiWellfound size={iconSize} />
       </a>
       <a
+        className="transform transition-transform hover:scale-125"
         href={soundCloudUrl}
         target={'_blank'}
         aria-label={'SoundCloud Profile'}
@@ -100,14 +119,19 @@ const User = ({
     </div>
     <div className="flex space-x-3 space-y-3">
       <a
-        className="mt-3"
+        className="mt-3 transform transition-transform hover:scale-125"
         href={`mailto:${gitHubUser['email']}`}
         target={'_blank'}
         aria-label={'Send An Email'}
       >
         <TbMail size={iconSize} />
       </a>
-      <a href={`tel:${phoneNumber}`} target={'_blank'} aria-label={'Call Me'}>
+      <a
+        className="transform transition-transform hover:scale-125"
+        href={`tel:${phoneNumber}`}
+        target={'_blank'}
+        aria-label={'Call Me'}
+      >
         <TbPhone size={iconSize} />
       </a>
     </div>
