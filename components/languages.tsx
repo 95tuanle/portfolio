@@ -8,7 +8,7 @@ const Languages = async ({ owner, repo }: any) => {
         {Object.keys(languages).map((language) => (
           <div
             key={language}
-            className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full px-2 py-1 text-xs font-semibold m-1"
+            className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full px-2 py-1 text-xs font-semibold m-1"
           >
             {language}
           </div>
