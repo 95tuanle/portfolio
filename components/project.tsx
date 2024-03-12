@@ -9,6 +9,7 @@ const Project = async ({ gitHubUserRepo }: any) => (
       href={gitHubUserRepo['html_url']}
       target={'_blank'}
       aria-label={gitHubUserRepo['name']}
+      title={gitHubUserRepo['name']}
     >
       {gitHubUserRepo['name']}
     </a>

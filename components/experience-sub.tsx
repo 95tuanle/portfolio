@@ -8,6 +8,7 @@ const ExperienceSub = ({ experienceSub }: any) => (
       href={experienceSub['companyUrl']}
       target={'_blank'}
       aria-label={experienceSub['company']}
+      title={experienceSub['company']}
     >
       {experienceSub['company']}
     </a>
