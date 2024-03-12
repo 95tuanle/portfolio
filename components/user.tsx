@@ -57,6 +57,7 @@ const User = ({
         href={linkedInUrl}
         target={'_blank'}
         aria-label={'LinkedIn Profile'}
+        title={'LinkedIn Profile'}
       >
         <SiLinkedin size={iconSize} />
       </a>
@@ -65,6 +66,7 @@ const User = ({
         href={gitHubUser['html_url']}
         target={'_blank'}
         aria-label={'GitHub Profile'}
+        title={'GitHub Profile'}
       >
         <SiGithub size={iconSize} />
       </a>
@@ -73,6 +75,7 @@ const User = ({
         href={leetCodeUrl}
         target={'_blank'}
         aria-label={'LeetCode Profile'}
+        title={'LeetCode Profile'}
       >
         <SiLeetcode size={iconSize} />
       </a>
@@ -81,6 +84,7 @@ const User = ({
         href={stackOverflowUrl}
         target={'_blank'}
         aria-label={'StackOverflow Profile'}
+        title={'StackOverflow Profile'}
       >
         <SiStackoverflow size={iconSize} />
       </a>
@@ -89,6 +93,7 @@ const User = ({
         href={`https://x.com/${gitHubUser['twitter_username']}`}
         target={'_blank'}
         aria-label={'X Profile'}
+        title={'X Profile'}
       >
         <SiX size={iconSize} />
       </a>
@@ -97,6 +102,7 @@ const User = ({
         href={redditUrl}
         target={'_blank'}
         aria-label={'Reddit Profile'}
+        title={'Reddit Profile'}
       >
         <SiReddit size={iconSize} />
       </a>
@@ -105,6 +111,7 @@ const User = ({
         href={wellfoundUrl}
         target={'_blank'}
         aria-label={'Wellfound Profile'}
+        title={'Wellfound Profile'}
       >
         <SiWellfound size={iconSize} />
       </a>
@@ -113,6 +120,7 @@ const User = ({
         href={soundCloudUrl}
         target={'_blank'}
         aria-label={'SoundCloud Profile'}
+        title={'SoundCloud Profile'}
       >
         <SiSoundcloud size={iconSize} />
       </a>
@@ -123,6 +131,7 @@ const User = ({
         href={`mailto:${gitHubUser['email']}`}
         target={'_blank'}
         aria-label={'Send An Email'}
+        title={'Send An Email'}
       >
         <TbMail size={iconSize} />
       </a>
@@ -130,7 +139,8 @@ const User = ({
         className="transform transition-transform hover:scale-125"
         href={`tel:${phoneNumber}`}
         target={'_blank'}
-        aria-label={'Call Me'}
+        aria-label={'Make A Call'}
+        title={'Make A Call'}
       >
         <TbPhone size={iconSize} />
       </a>

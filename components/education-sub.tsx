@@ -5,6 +5,7 @@ const EducationSub = ({ educationSub }: any) => (
       href={educationSub['institutionUrl']}
       target={'_blank'}
       aria-label={educationSub['institution']}
+      title={educationSub['institution']}
     >
       {educationSub['institution']}
     </a>
