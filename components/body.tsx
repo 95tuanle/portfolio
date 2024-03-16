@@ -12,16 +12,23 @@ import Experience from '@/components/experience';
 import Education from '@/components/education';
 import Projects from '@/components/projects';
 import Footer from '@/components/footer';
+import { getLeetCodeUserProfileSubmissionNumbers } from '@/ultilities/leetcode';
+import LeetCode from '@/components/leetcode';
 
 export const Body = async () => {
   try {
     const gitHubUser = await getGitHubUser();
-    const [gitHubUserRepos, gitHubUserRepoFileContent] = await Promise.all([
+    const [
+      gitHubUserRepos,
+      gitHubUserRepoFileContent,
+      leetCodeUserProfileSubmissionNumbers,
+    ] = await Promise.all([
       getGitHubUserRepos(),
       getGitHubUserRepoReadmeFileContent(
         gitHubUser['login'],
         gitHubUser['login'],
       ),
+      getLeetCodeUserProfileSubmissionNumbers(gitHubUser['login']),
     ]);
     const iconSize = 28;
     let phoneNumber: string | any;
@@ -80,6 +87,11 @@ export const Body = async () => {
         <Experience experience={gitHubReadmeMarkdownJSON['experience']} />
         <Education education={gitHubReadmeMarkdownJSON['education']} />
         <Projects gitHubUserRepos={gitHubUserRepos} />
+        <LeetCode
+          leetCodeUserProfileSubmissionNumbers={
+            leetCodeUserProfileSubmissionNumbers
+          }
+        />
         <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber} />
       </>
     );
