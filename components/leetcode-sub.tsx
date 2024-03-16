@@ -4,7 +4,7 @@ const LeetCodeSub = ({
   leetCodeUserProfileSubmissionNumber: any;
 }) => (
   <div className="p-3 ml-6">
-    <div className="text-lg font-semibold">
+    <div className="text-lg font-semibold mb-3">
       {leetCodeUserProfileSubmissionNumber['difficulty']}
     </div>
     <div className="flex flex-wrap">
