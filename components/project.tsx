@@ -1,8 +1,6 @@
 import Languages from '@/components/languages';
-import { Suspense } from 'react';
-import { Loading } from '@/components/loading';
 
-const Project = async ({ gitHubUserRepo }: any) => (
+const Project = ({ gitHubUserRepo }: any) => (
   <div className="p-3 ml-6">
     <a
       className="text-lg font-semibold mb hover:underline"
@@ -16,12 +14,7 @@ const Project = async ({ gitHubUserRepo }: any) => (
     <div className="text-gray-700 dark:text-gray-300 mb-3">
       {gitHubUserRepo['description']}
     </div>
-    <Suspense fallback={<Loading />}>
-      <Languages
-        owner={gitHubUserRepo['owner']['login']}
-        repo={gitHubUserRepo['name']}
-      />
-    </Suspense>
+    <Languages languages={gitHubUserRepo['languages']} />
   </div>
 );
 

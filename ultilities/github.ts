@@ -21,7 +21,15 @@ export const getGitHubUserRepos = cache(async () => {
       sort: 'pushed',
       per_page: 333,
     });
-    return data;
+    return await Promise.all(
+      data.map(async (gitHubUserRepo: any) => {
+        const languages = await getGitHubUserRepoLanguages(
+          gitHubUserRepo['owner']['login'],
+          gitHubUserRepo['name'],
+        );
+        return { ...gitHubUserRepo, languages };
+      }),
+    );
   } catch (error) {
     throw error;
   }
@@ -45,19 +53,17 @@ export const getGitHubUserRepoReadmeFileContent = cache(
   },
 );
 
-export const getGitHubUserRepoLanguages = cache(
-  async (owner: any, repo: any) => {
-    try {
-      const { data } = await requestWithAuth(
-        'GET /repos/{owner}/{repo}/languages',
-        {
-          owner: owner,
-          repo: repo,
-        },
-      );
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  },
-);
+const getGitHubUserRepoLanguages = cache(async (owner: any, repo: any) => {
+  try {
+    const { data } = await requestWithAuth(
+      'GET /repos/{owner}/{repo}/languages',
+      {
+        owner: owner,
+        repo: repo,
+      },
+    );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+});
