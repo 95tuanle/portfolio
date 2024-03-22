@@ -12,7 +12,7 @@ const ProjectsClient = ({ gitHubUserRepos }: any) => {
       <div className="text-center p-3">
         {sliceThreshold < gitHubUserRepos.length ? (
           <button
-            className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full px-2 py-1 text-xs font-semibold m-1"
+            className="bg-gray-700 dark:bg-gray-300 text-gray-300 dark:text-gray-700 rounded-full px-2 py-1 text-xs font-semibold m-1"
             onClick={() => setSliceThreshold(sliceThreshold + 10)}
           >
             Load More

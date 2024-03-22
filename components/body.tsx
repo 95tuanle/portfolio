@@ -89,7 +89,7 @@ export const Body = async () => {
         <Education education={gitHubReadmeMarkdownJSON['education']} />
         <Projects
           gitHubUserRepos={gitHubUserRepos}
-          numberOfProject={numberOfProjects}
+          numberOfProjects={numberOfProjects}
         />
         <LeetCode
           leetCodeUserProfileSubmissionNumbers={
