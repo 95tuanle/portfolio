@@ -31,6 +31,7 @@ export const Body = async () => {
       getLeetCodeUserProfileSubmissionNumbers(gitHubUser['login']),
     ]);
     const iconSize = 28;
+    const numberOfProjects = 20;
     let phoneNumber: string | any;
     let leetCodeUrl: string | any;
     let linkedInUrl: string | any;
@@ -86,7 +87,10 @@ export const Body = async () => {
         />
         <Experience experience={gitHubReadmeMarkdownJSON['experience']} />
         <Education education={gitHubReadmeMarkdownJSON['education']} />
-        <Projects gitHubUserRepos={gitHubUserRepos} />
+        <Projects
+          gitHubUserRepos={gitHubUserRepos}
+          numberOfProject={numberOfProjects}
+        />
         <LeetCode
           leetCodeUserProfileSubmissionNumbers={
             leetCodeUserProfileSubmissionNumbers
