@@ -12,13 +12,13 @@ const Project = ({ gitHubUserRepo }: any) => (
       {gitHubUserRepo['name']}
     </a>
     {gitHubUserRepo['description'] && (
-      <div className="text-gray-700 dark:text-gray-300 mb-3">
+      <div className="text-gray-700 dark:text-gray-300">
         {gitHubUserRepo['description']}
       </div>
     )}
     {gitHubUserRepo['homepage'] && (
       <a
-        className="text-blue-700 dark:text-blue-300 hover:underline"
+        className="hover:underline"
         href={gitHubUserRepo['homepage']}
         target={'_blank'}
         aria-label={gitHubUserRepo['homepage']}
