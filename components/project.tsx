@@ -18,7 +18,7 @@ const Project = ({ gitHubUserRepo }: any) => (
     )}
     {gitHubUserRepo['homepage'] && (
       <a
-        className="text-blue-500 hover:underline"
+        className="text-blue-700 dark:text-blue-300 hover:underline"
         href={gitHubUserRepo['homepage']}
         target={'_blank'}
         aria-label={gitHubUserRepo['homepage']}
