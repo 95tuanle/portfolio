@@ -1,14 +1,14 @@
-const Languages = ({ languages }: any) => (
+const TopicsOrLanguages = ({ topicsOrLanguages }: any) => (
   <div className="flex flex-wrap">
-    {Object.keys(languages).map((language) => (
+    {topicsOrLanguages.map((topicOrLanguage: any) => (
       <div
-        key={language}
+        key={topicOrLanguage}
         className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full px-2 py-1 text-xs font-semibold m-1"
       >
-        {language}
+        {topicOrLanguage}
       </div>
     ))}
   </div>
 );
 
-export default Languages;
+export default TopicsOrLanguages;
