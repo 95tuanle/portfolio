@@ -1,7 +1,7 @@
 import Languages from '@/components/languages';
 
 const Project = ({ gitHubUserRepo }: any) => (
-  <div className="p-3 ml-6">
+  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg">
     <a
       className="text-lg font-semibold mb hover:underline"
       href={gitHubUserRepo['html_url']}
