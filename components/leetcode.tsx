@@ -1,4 +1,4 @@
-import LeetCodeSub from '@/components/leetcode-sub';
+import LeetCodeSub from '@/components/leetcode.sub';
 
 const LeetCode = ({
   leetCodeUserProfileSubmissionNumbers,

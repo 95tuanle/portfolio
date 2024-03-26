@@ -1,4 +1,4 @@
-import Languages from '@/components/languages';
+import TopicsOrLanguages from '@/components/topics-or-languages';
 
 const Project = ({ gitHubUserRepo }: any) => (
   <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg">
@@ -14,7 +14,19 @@ const Project = ({ gitHubUserRepo }: any) => (
     <div className="text-gray-700 dark:text-gray-300 mb-3">
       {gitHubUserRepo['description']}
     </div>
-    <Languages languages={gitHubUserRepo['languages']} />
+    <a
+      className="text-blue-500 hover:underline"
+      href={gitHubUserRepo['homepage']}
+      target={'_blank'}
+      aria-label={gitHubUserRepo['homepage']}
+      title={gitHubUserRepo['homepage']}
+    >
+      {gitHubUserRepo['homepage']}
+    </a>
+    <TopicsOrLanguages topicsOrLanguages={gitHubUserRepo['topics']} />
+    <TopicsOrLanguages
+      topicsOrLanguages={Object.keys(gitHubUserRepo['languages'])}
+    />
   </div>
 );
 
