@@ -11,18 +11,22 @@ const Project = ({ gitHubUserRepo }: any) => (
     >
       {gitHubUserRepo['name']}
     </a>
-    <div className="text-gray-700 dark:text-gray-300 mb-3">
-      {gitHubUserRepo['description']}
-    </div>
-    <a
-      className="text-blue-500 hover:underline"
-      href={gitHubUserRepo['homepage']}
-      target={'_blank'}
-      aria-label={gitHubUserRepo['homepage']}
-      title={gitHubUserRepo['homepage']}
-    >
-      {gitHubUserRepo['homepage']}
-    </a>
+    {gitHubUserRepo['description'] && (
+      <div className="text-gray-700 dark:text-gray-300 mb-3">
+        {gitHubUserRepo['description']}
+      </div>
+    )}
+    {gitHubUserRepo['homepage'] && (
+      <a
+        className="text-blue-500 hover:underline"
+        href={gitHubUserRepo['homepage']}
+        target={'_blank'}
+        aria-label={gitHubUserRepo['homepage']}
+        title={gitHubUserRepo['homepage']}
+      >
+        {gitHubUserRepo['homepage']}
+      </a>
+    )}
     <TopicsOrLanguages topicsOrLanguages={gitHubUserRepo['topics']} />
     <TopicsOrLanguages
       topicsOrLanguages={Object.keys(gitHubUserRepo['languages'])}
