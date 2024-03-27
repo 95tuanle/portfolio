@@ -4,7 +4,7 @@ import { ReactElement, useCallback, useMemo, useState } from 'react';
 const ProjectsClient = ({ children }: { children: ReactElement[] }) => {
   const [sliceThreshold, setSliceThreshold] = useState(0);
 
-  const slicedChildren = useMemo(() => {
+  const languages = useMemo(() => {
     return children.slice(0, sliceThreshold);
   }, [children, sliceThreshold]);
 
@@ -18,7 +18,7 @@ const ProjectsClient = ({ children }: { children: ReactElement[] }) => {
 
   return (
     <>
-      {slicedChildren.map((slicedChild) => slicedChild)}
+      {languages.map((language) => language)}
       <div className="text-center p-3">
         {sliceThreshold < children.length ? (
           <button
