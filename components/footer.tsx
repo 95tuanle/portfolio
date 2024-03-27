@@ -1,5 +1,5 @@
 const Footer = ({ gitHubUser, phoneNumber }: any) => (
-  <footer className="p-3 text-center">
+  <footer className="p-3 text-center break-words">
     <a
       href={'/'}
       className="hover:underline py-4"
