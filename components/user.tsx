@@ -22,7 +22,7 @@ const User = ({
   soundCloudUrl,
   iconSize,
 }: any) => (
-  <div className="flex flex-col items-center p-3">
+  <div className="flex flex-col items-center p-3 break-words">
     <div className="flex flex-col items-center space-x-3 space-y-3">
       <div
         className={`relative ${gitHubUser['hireable'] ? 'border-green-700 border-2 rounded-full' : ''}`}
@@ -52,7 +52,7 @@ const User = ({
         </div>
       </div>
     </div>
-    <div className="flex space-x-3 space-y-3">
+    <div className="flex flex-wrap space-x-3 space-y-3">
       <a
         className="mt-3 transform transition-transform hover:scale-125"
         href={linkedInUrl}
@@ -126,7 +126,7 @@ const User = ({
         <SiSoundcloud size={iconSize} />
       </a>
     </div>
-    <div className="flex space-x-3 space-y-3">
+    <div className="flex flex-wrap space-x-3 space-y-3">
       <a
         className="mt-3 transform transition-transform hover:scale-125"
         href={`mailto:${gitHubUser['email']}`}

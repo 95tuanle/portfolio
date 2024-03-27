@@ -3,7 +3,7 @@ const LeetCodeSub = ({
 }: {
   leetCodeUserProfileSubmissionNumber: any;
 }) => (
-  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg">
+  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg break-words">
     <div className="text-lg font-semibold mb-3">
       {leetCodeUserProfileSubmissionNumber['difficulty']}
     </div>
