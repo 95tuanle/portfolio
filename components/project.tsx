@@ -1,7 +1,7 @@
 import TopicsOrLanguages from '@/components/topics-or-languages';
 
 const Project = ({ gitHubUserRepo }: any) => (
-  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg  break-words">
+  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg break-words">
     <a
       className="text-lg font-semibold mb hover:underline"
       href={gitHubUserRepo['html_url']}
