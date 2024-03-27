@@ -7,7 +7,11 @@ const Projects = ({ gitHubUserRepos, numberOfProjects }: any) => (
     {gitHubUserRepos.slice(0, numberOfProjects).map((gitHubUserRepo: any) => (
       <Project gitHubUserRepo={gitHubUserRepo} key={gitHubUserRepo['id']} />
     ))}
-    <ProjectsClient gitHubUserRepos={gitHubUserRepos.slice(numberOfProjects)} />
+    <ProjectsClient>
+      {gitHubUserRepos.slice(numberOfProjects).map((gitHubUserRepo: any) => (
+        <Project gitHubUserRepo={gitHubUserRepo} key={gitHubUserRepo['id']} />
+      ))}
+    </ProjectsClient>
   </>
 );
 
