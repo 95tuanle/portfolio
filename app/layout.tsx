@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { getGitHubUser } from '@/ultilities/github';
 
 const inter = Inter({ subsets: ['latin'] });
-
+export const runtime = 'edge';
 export const revalidate = 3600;
 
 export const generateMetadata = async () => {
