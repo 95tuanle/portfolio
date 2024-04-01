@@ -7,13 +7,14 @@ import {
   GitHubReadmeMarkdownJSON,
   parseGitHubReadmeMarkdown,
 } from '@/ultilities/github-readme-markdown-parser';
+import { getLeetCodeUserProfileSubmissionNumbers } from '@/ultilities/leetcode';
 import User from '@/components/user';
 import Experience from '@/components/experience/experience';
 import Education from '@/components/education/education';
 import Projects from '@/components/projects/projects';
 import Footer from '@/components/footer';
-import { getLeetCodeUserProfileSubmissionNumbers } from '@/ultilities/leetcode';
 import LeetCode from '@/components/leetcode/leetcode';
+import Contact from '@/components/contact/contact';
 
 export const Body = async () => {
   try {
@@ -96,6 +97,7 @@ export const Body = async () => {
             leetCodeUserProfileSubmissionNumbers
           }
         />
+        <Contact email={gitHubUser['email']} name={gitHubUser['name']} />
         <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber} />
       </>
     );
