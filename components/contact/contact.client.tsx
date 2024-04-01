@@ -20,7 +20,7 @@ const ContactClient = ({ gitHubUserEmail, gitHubUserName }: any) => {
     <form action={dispatch} className="p-3 mx-3">
       <input
         type="email"
-        className="w-full border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-sm placeholder:text-gray-500 bg-transparent"
+        className="w-full border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-base placeholder:text-gray-500 bg-transparent"
         name="email"
         placeholder="Email"
         required={true}
@@ -34,7 +34,7 @@ const ContactClient = ({ gitHubUserEmail, gitHubUserName }: any) => {
           </p>
         ))}
       <textarea
-        className="w-full border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-sm placeholder:text-gray-500 bg-transparent mt-3"
+        className="w-full border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-base placeholder:text-gray-500 bg-transparent mt-3"
         name="text"
         placeholder="Text"
         required={true}
