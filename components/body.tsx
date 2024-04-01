@@ -97,7 +97,10 @@ export const Body = async () => {
             leetCodeUserProfileSubmissionNumbers
           }
         />
-        <Contact email={gitHubUser['email']} name={gitHubUser['name']} />
+        <Contact
+          gitHubUserEmail={gitHubUser['email']}
+          gitHubUserName={gitHubUser['name']}
+        />
         <Footer gitHubUser={gitHubUser} phoneNumber={phoneNumber} />
       </>
     );
