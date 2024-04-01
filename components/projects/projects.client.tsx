@@ -19,7 +19,7 @@ const ProjectsClient = ({ children }: { children: any[] }) => {
   return (
     <>
       {projects.map((project) => project)}
-      <div className="text-center p-3">
+      <div className="text-center">
         {sliceThreshold < children.length ? (
           <button
             className="bg-gray-700 dark:bg-gray-300 text-gray-300 dark:text-gray-700 rounded-full px-2 py-1 text-xs font-semibold m-1"
