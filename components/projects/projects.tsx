@@ -1,5 +1,5 @@
-import ProjectSub from '@/components/project.sub';
-import ProjectsClient from '@/components/projects.client';
+import ProjectSub from '@/components/projects/project.sub';
+import ProjectsClient from '@/components/projects/projects.client';
 import SubWrapper from '@/components/sub-wrapper';
 
 const Projects = ({ gitHubUserRepos, numberOfProjects }: any) => (

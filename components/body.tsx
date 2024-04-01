@@ -8,12 +8,12 @@ import {
   parseGitHubReadmeMarkdown,
 } from '@/ultilities/github-readme-markdown-parser';
 import User from '@/components/user';
-import Experience from '@/components/experience';
-import Education from '@/components/education';
-import Projects from '@/components/projects';
+import Experience from '@/components/experience/experience';
+import Education from '@/components/education/education';
+import Projects from '@/components/projects/projects';
 import Footer from '@/components/footer';
 import { getLeetCodeUserProfileSubmissionNumbers } from '@/ultilities/leetcode';
-import LeetCode from '@/components/leetcode';
+import LeetCode from '@/components/leetcode/leetcode';
 
 export const Body = async () => {
   try {

@@ -1,4 +1,4 @@
-import Responsibility from '@/components/responsibility';
+import Responsibility from '@/components/experience/responsibility';
 
 const ExperienceSub = ({ experienceSub }: any) => (
   <>

@@ -1,4 +1,4 @@
-import ExperienceSub from '@/components/experience.sub';
+import ExperienceSub from '@/components/experience/experience.sub';
 import SubWrapper from '@/components/sub-wrapper';
 
 const Experience = ({ experience }: any) => (

@@ -1,4 +1,4 @@
-import TopicsOrLanguages from '@/components/topics-or-languages';
+import TopicsOrLanguages from '@/components/projects/topics-or-languages';
 
 const ProjectSub = ({ gitHubUserRepo }: any) => (
   <>

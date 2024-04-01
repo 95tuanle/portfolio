@@ -1,4 +1,4 @@
-import EducationSub from '@/components/education.sub';
+import EducationSub from '@/components/education/education.sub';
 import SubWrapper from '@/components/sub-wrapper';
 
 const Education = ({ education }: any) => (

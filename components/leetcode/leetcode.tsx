@@ -1,4 +1,4 @@
-import LeetCodeSub from '@/components/leetcode.sub';
+import LeetCodeSub from '@/components/leetcode/leetcode.sub';
 import SubWrapper from '@/components/sub-wrapper';
 
 const LeetCode = ({ leetCodeUserProfileSubmissionNumbers }: any) => (
