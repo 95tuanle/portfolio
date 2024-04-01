@@ -1,7 +1,7 @@
 import TopicsOrLanguages from '@/components/topics-or-languages';
 
-const Project = ({ gitHubUserRepo }: any) => (
-  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg break-words">
+const ProjectSub = ({ gitHubUserRepo }: any) => (
+  <>
     <a
       className="text-lg font-semibold mb hover:underline"
       href={gitHubUserRepo['html_url']}
@@ -31,7 +31,7 @@ const Project = ({ gitHubUserRepo }: any) => (
     <TopicsOrLanguages
       topicsOrLanguages={Object.keys(gitHubUserRepo['languages'])}
     />
-  </div>
+  </>
 );
 
-export default Project;
+export default ProjectSub;

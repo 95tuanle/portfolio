@@ -1,7 +1,7 @@
 import Responsibility from '@/components/responsibility';
 
 const ExperienceSub = ({ experienceSub }: any) => (
-  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg break-words">
+  <>
     <div className="text-lg font-semibold">{experienceSub['position']}</div>
     <a
       className="hover:underline"
@@ -23,7 +23,7 @@ const ExperienceSub = ({ experienceSub }: any) => (
         <Responsibility responsibility={responsibility} key={index} />
       ),
     )}
-  </div>
+  </>
 );
 
 export default ExperienceSub;

@@ -1,15 +1,20 @@
-import Project from '@/components/project';
+import ProjectSub from '@/components/project.sub';
 import ProjectsClient from '@/components/projects.client';
+import SubWrapper from '@/components/sub-wrapper';
 
 const Projects = ({ gitHubUserRepos, numberOfProjects }: any) => (
   <>
     <div className="text-2xl font-semibold p-3 mx-3 mt-6">Projects</div>
     {gitHubUserRepos.slice(0, numberOfProjects).map((gitHubUserRepo: any) => (
-      <Project gitHubUserRepo={gitHubUserRepo} key={gitHubUserRepo['id']} />
+      <SubWrapper key={gitHubUserRepo['id']}>
+        <ProjectSub gitHubUserRepo={gitHubUserRepo} />
+      </SubWrapper>
     ))}
     <ProjectsClient>
       {gitHubUserRepos.slice(numberOfProjects).map((gitHubUserRepo: any) => (
-        <Project gitHubUserRepo={gitHubUserRepo} key={gitHubUserRepo['id']} />
+        <SubWrapper key={gitHubUserRepo['id']}>
+          <ProjectSub gitHubUserRepo={gitHubUserRepo} />
+        </SubWrapper>
       ))}
     </ProjectsClient>
   </>
