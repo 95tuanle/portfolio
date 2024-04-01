@@ -1,7 +1,7 @@
 'use client';
-import { ReactElement, useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
-const ProjectsClient = ({ children }: { children: ReactElement[] }) => {
+const ProjectsClient = ({ children }: { children: any[] }) => {
   const [sliceThreshold, setSliceThreshold] = useState(0);
 
   const projects = useMemo(() => {

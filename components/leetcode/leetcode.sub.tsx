@@ -1,10 +1,6 @@
-const LeetCodeSub = ({
-  leetCodeUserProfileSubmissionNumber,
-}: {
-  leetCodeUserProfileSubmissionNumber: any;
-}) => (
-  <div className="p-3 mx-6 my-3 border border-gray-300 dark:border-gray-700 rounded-lg break-words">
-    <div className="text-lg font-semibold mb-3">
+const LeetCodeSub = ({ leetCodeUserProfileSubmissionNumber }: any) => (
+  <>
+    <div className="text-lg font-semibold">
       {leetCodeUserProfileSubmissionNumber['difficulty']}
     </div>
     <div className="flex flex-wrap">
@@ -15,7 +11,7 @@ const LeetCodeSub = ({
         Submissions: {leetCodeUserProfileSubmissionNumber['submissions']}
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default LeetCodeSub;
