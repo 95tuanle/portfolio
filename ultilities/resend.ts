@@ -4,15 +4,16 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (
   name: any,
-  toEmail: any,
   fromEmail: any,
+  toEmail: any,
+  replyToEmail: any,
   subject: any,
   text: any,
 ) => {
   const { data, error } = await resend.emails.send({
-    from: `${name} <onboarding@resend.dev>`,
+    from: `${name} <${fromEmail}>`,
     to: toEmail,
-    reply_to: fromEmail,
+    reply_to: replyToEmail,
     subject: subject,
     text: text,
   });
