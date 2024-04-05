@@ -1,12 +1,12 @@
 'use client';
 import { useFormState } from 'react-dom';
-import { handleSendEmail } from '@/ultilities/actions';
 import { SendEmailState } from '@/ultilities/definitions';
+import { handleSendContactForm } from '@/ultilities/actions';
 
 const ContactClient = ({ gitHubUserEmail, gitHubUserName }: any) => {
   const [state, dispatch] = useFormState(
     (sendEmailState: SendEmailState, formData: FormData) =>
-      handleSendEmail(
+      handleSendContactForm(
         sendEmailState,
         formData,
         gitHubUserEmail,
