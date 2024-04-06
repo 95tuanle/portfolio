@@ -1,7 +1,7 @@
 import LinkWrapper from '@/components/link-wrapper';
 
 const Footer = ({ gitHubUser, phoneNumber }: any) => (
-  <footer className="text-center break-words mx-6">
+  <footer className="text-center break-words m-6">
     <LinkWrapper href={'/'} label={'Main Page'} title={'Main Page'}>
       &copy; {new Date().getFullYear()} {gitHubUser.name}
     </LinkWrapper>
