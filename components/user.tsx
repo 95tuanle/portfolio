@@ -34,7 +34,7 @@ const User = ({
           alt="user avatar"
           width={144}
           height={144}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {gitHubUser['hireable'] && (
           <span className="absolute bottom-0 right-0 bg-green-700 text-white rounded-full text-xs px-2 py-1">

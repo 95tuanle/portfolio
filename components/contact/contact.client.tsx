@@ -25,6 +25,7 @@ const ContactClient = ({ gitHubUserEmail, gitHubUserName }: any) => {
         placeholder="Email"
         required={true}
         aria-describedby="email-error"
+        autoComplete={'email'}
       />
       {typeof state == 'object' &&
         state?.errors?.email &&
@@ -40,6 +41,7 @@ const ContactClient = ({ gitHubUserEmail, gitHubUserName }: any) => {
         required={true}
         minLength={10}
         aria-describedby="text-error"
+        autoComplete={'text'}
       />
       {typeof state == 'object' &&
         state?.errors?.text &&
