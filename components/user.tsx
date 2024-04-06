@@ -22,19 +22,19 @@ const User = ({
   soundCloudUrl,
   iconSize,
 }: any) => (
-  <div className="flex flex-col items-center p-3 break-words">
-    <div className="flex flex-col items-center space-x-3 space-y-3">
+  <div className="flex flex-col items-center m-6 break-words">
+    <div className="flex flex-col items-center">
       <div
         className={`relative ${gitHubUser['hireable'] ? 'border-green-700 border-2 rounded-full' : ''}`}
       >
         <Image
           priority={true}
-          className="rounded-full w-36 h-36"
+          className="rounded-full"
           src={gitHubUser['avatar_url']}
           alt="user avatar"
           width={144}
           height={144}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {gitHubUser['hireable'] && (
           <span className="absolute bottom-0 right-0 bg-green-700 text-white rounded-full text-xs px-2 py-1">
@@ -52,9 +52,9 @@ const User = ({
         </div>
       </div>
     </div>
-    <div className="flex flex-wrap space-x-3 space-y-3">
+    <div className="flex flex-wrap">
       <a
-        className="mt-3 transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={linkedInUrl}
         target={'_blank'}
         aria-label={'LinkedIn Profile'}
@@ -63,7 +63,7 @@ const User = ({
         <SiLinkedin size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={gitHubUser['html_url']}
         target={'_blank'}
         aria-label={'GitHub Profile'}
@@ -72,7 +72,7 @@ const User = ({
         <SiGithub size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={leetCodeUrl}
         target={'_blank'}
         aria-label={'LeetCode Profile'}
@@ -81,7 +81,7 @@ const User = ({
         <SiLeetcode size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={stackOverflowUrl}
         target={'_blank'}
         aria-label={'StackOverflow Profile'}
@@ -90,7 +90,7 @@ const User = ({
         <SiStackoverflow size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={`https://x.com/${gitHubUser['twitter_username']}`}
         target={'_blank'}
         aria-label={'X Profile'}
@@ -99,7 +99,7 @@ const User = ({
         <SiX size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={redditUrl}
         target={'_blank'}
         aria-label={'Reddit Profile'}
@@ -108,7 +108,7 @@ const User = ({
         <SiReddit size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={wellfoundUrl}
         target={'_blank'}
         aria-label={'Wellfound Profile'}
@@ -117,7 +117,7 @@ const User = ({
         <SiWellfound size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={soundCloudUrl}
         target={'_blank'}
         aria-label={'SoundCloud Profile'}
@@ -126,9 +126,9 @@ const User = ({
         <SiSoundcloud size={iconSize} />
       </a>
     </div>
-    <div className="flex flex-wrap space-x-3 space-y-3">
+    <div className="flex flex-wrap">
       <a
-        className="mt-3 transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={`mailto:${gitHubUser['email']}`}
         target={'_blank'}
         aria-label={'Send An Email'}
@@ -137,7 +137,7 @@ const User = ({
         <TbMail size={iconSize} />
       </a>
       <a
-        className="transform transition-transform hover:scale-125"
+        className="p-2 transform transition-transform hover:scale-125"
         href={`tel:${phoneNumber}`}
         target={'_blank'}
         aria-label={'Make A Call'}
