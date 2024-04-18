@@ -9,13 +9,8 @@ const LinkWrapper = ({
   title: string;
   children: any;
 }) => (
-  <div className="block py-4">
-    <a
-      href={href}
-      className="hover:underline py-4"
-      aria-label={label}
-      title={title}
-    >
+  <div className="py-4">
+    <a href={href} className="hover:underline" aria-label={label} title={title}>
       {children}
     </a>
   </div>

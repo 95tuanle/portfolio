@@ -4,7 +4,7 @@ const ProjectSub = ({ gitHubUserRepo }: any) => (
   <>
     <div>
       <a
-        className="text-lg font-semibold mb hover:underline"
+        className="text-lg font-semibold hover:underline"
         href={gitHubUserRepo['html_url']}
         target={'_blank'}
         aria-label={gitHubUserRepo['name']}
@@ -19,7 +19,7 @@ const ProjectSub = ({ gitHubUserRepo }: any) => (
       </div>
     )}
     {gitHubUserRepo['homepage'] && (
-      <div>
+      <div className="mt-3">
         <a
           className="hover:underline"
           href={gitHubUserRepo['homepage']}
