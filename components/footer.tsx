@@ -12,11 +12,7 @@ const Footer = ({ gitHubUser, phoneNumber }: any) => (
     >
       {gitHubUser.email}
     </LinkWrapper>
-    <LinkWrapper
-      href={`tel:${phoneNumber}`}
-      label={'Make A Call'}
-      title={'Make A Call'}
-    >
+    <LinkWrapper href={phoneNumber} label={'Make A Call'} title={'Make A Call'}>
       {phoneNumber.replace('tel:', '')}
     </LinkWrapper>
   </footer>
