@@ -14,6 +14,15 @@ export const getGitHubUser = cache(async () => {
   }
 });
 
+export const getGitHubUserSocialAccounts = cache(async () => {
+  try {
+    const { data } = await requestWithAuth('GET /user/social_accounts');
+    return data;
+  } catch (error) {
+    throw error;
+  }
+});
+
 export const getGitHubUserRepos = cache(async () => {
   try {
     const { data } = await requestWithAuth('GET /user/repos', {
