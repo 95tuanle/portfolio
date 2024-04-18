@@ -2,6 +2,7 @@ import {
   getGitHubUser,
   getGitHubUserRepoReadmeFileContent,
   getGitHubUserRepos,
+  getGitHubUserSocialAccounts,
 } from '@/ultilities/github';
 import { getLeetCodeUserProfileSubmissionNumbers } from '@/ultilities/leetcode';
 import {
@@ -19,6 +20,23 @@ import Footer from '@/components/footer';
 const Page = async () => {
   try {
     const gitHubUser = await getGitHubUser();
+    const gitHubUserSocialAccounts = await getGitHubUserSocialAccounts();
+    let leetCodeUrl: string | any;
+    let linkedInUrl: string | any;
+    let redditUrl: string | any;
+    for (const gitHubUserSocialAccount of gitHubUserSocialAccounts) {
+      switch (gitHubUserSocialAccount['provider']) {
+        case 'generic':
+          leetCodeUrl = gitHubUserSocialAccount['url'];
+          break;
+        case 'linkedin':
+          linkedInUrl = gitHubUserSocialAccount['url'];
+          break;
+        case 'reddit':
+          redditUrl = gitHubUserSocialAccount['url'];
+          break;
+      }
+    }
     const [
       gitHubUserRepos,
       gitHubUserRepoFileContent,
@@ -34,11 +52,8 @@ const Page = async () => {
     const iconSize = 28;
     const numberOfProjects = 20;
     let phoneNumber: string | any;
-    let leetCodeUrl: string | any;
-    let linkedInUrl: string | any;
     let stackOverflowUrl: string | any;
     let wellfoundUrl: string | any;
-    let redditUrl: string | any;
     let soundCloudUrl: string | any;
     let gitHubReadmeMarkdownJSON: GitHubReadmeMarkdownJSON | any;
     if (typeof gitHubUserRepoFileContent == 'string') {
@@ -52,20 +67,11 @@ const Page = async () => {
           case 'Phone':
             phoneNumber = gitHubReadmeMarkdownJSONContact['url'];
             break;
-          case 'LeetCode':
-            leetCodeUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
-          case 'LinkedIn':
-            linkedInUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
           case 'Stack Overflow':
             stackOverflowUrl = gitHubReadmeMarkdownJSONContact['url'];
             break;
           case 'Wellfound':
             wellfoundUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
-          case 'Reddit':
-            redditUrl = gitHubReadmeMarkdownJSONContact['url'];
             break;
           case 'SoundCloud':
             soundCloudUrl = gitHubReadmeMarkdownJSONContact['url'];
