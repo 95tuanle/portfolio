@@ -138,7 +138,7 @@ const User = ({
       </a>
       <a
         className="p-2 transform transition-transform hover:scale-125"
-        href={`tel:${phoneNumber}`}
+        href={phoneNumber}
         target={'_blank'}
         aria-label={'Make A Call'}
         title={'Make A Call'}
