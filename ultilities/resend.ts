@@ -13,7 +13,7 @@ export const sendEmail = async (
   const { data, error } = await resend.emails.send({
     from: `${name} <${fromEmail}>`,
     to: toEmail,
-    reply_to: replyToEmail,
+    replyTo: replyToEmail,
     subject: subject,
     text: text,
   });
