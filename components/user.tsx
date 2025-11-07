@@ -5,9 +5,6 @@ import {
   SiLeetcode,
   SiLinkedin,
   SiReddit,
-  SiSoundcloud,
-  SiStackoverflow,
-  SiWellfound,
   SiX,
 } from 'react-icons/si';
 
@@ -16,10 +13,7 @@ const User = ({
   phoneNumber,
   leetCodeUrl,
   linkedInUrl,
-  stackOverflowUrl,
-  wellfoundUrl,
   redditUrl,
-  soundCloudUrl,
   iconSize,
 }: any) => (
   <div className="flex flex-col items-center m-6 break-words">
@@ -82,15 +76,6 @@ const User = ({
       </a>
       <a
         className="p-2 transform transition-transform hover:scale-125"
-        href={stackOverflowUrl}
-        target={'_blank'}
-        aria-label={'StackOverflow Profile'}
-        title={'StackOverflow Profile'}
-      >
-        <SiStackoverflow size={iconSize} />
-      </a>
-      <a
-        className="p-2 transform transition-transform hover:scale-125"
         href={`https://x.com/${gitHubUser['twitter_username']}`}
         target={'_blank'}
         aria-label={'X Profile'}
@@ -106,24 +91,6 @@ const User = ({
         title={'Reddit Profile'}
       >
         <SiReddit size={iconSize} />
-      </a>
-      <a
-        className="p-2 transform transition-transform hover:scale-125"
-        href={wellfoundUrl}
-        target={'_blank'}
-        aria-label={'Wellfound Profile'}
-        title={'Wellfound Profile'}
-      >
-        <SiWellfound size={iconSize} />
-      </a>
-      <a
-        className="p-2 transform transition-transform hover:scale-125"
-        href={soundCloudUrl}
-        target={'_blank'}
-        aria-label={'SoundCloud Profile'}
-        title={'SoundCloud Profile'}
-      >
-        <SiSoundcloud size={iconSize} />
       </a>
     </div>
     <div className="flex flex-wrap">

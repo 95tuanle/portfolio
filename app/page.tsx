@@ -52,9 +52,6 @@ const Page = async () => {
     const iconSize = 28;
     const numberOfProjects = 20;
     let phoneNumber: string | any;
-    let stackOverflowUrl: string | any;
-    let wellfoundUrl: string | any;
-    let soundCloudUrl: string | any;
     let gitHubReadmeMarkdownJSON: GitHubReadmeMarkdownJSON | any;
     if (typeof gitHubUserRepoFileContent == 'string') {
       gitHubReadmeMarkdownJSON = parseGitHubReadmeMarkdown(
@@ -67,15 +64,6 @@ const Page = async () => {
           case 'Phone':
             phoneNumber = gitHubReadmeMarkdownJSONContact['url'];
             break;
-          case 'Stack Overflow':
-            stackOverflowUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
-          case 'Wellfound':
-            wellfoundUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
-          case 'SoundCloud':
-            soundCloudUrl = gitHubReadmeMarkdownJSONContact['url'];
-            break;
         }
       }
     }
@@ -86,10 +74,7 @@ const Page = async () => {
           phoneNumber={phoneNumber}
           leetCodeUrl={leetCodeUrl}
           linkedInUrl={linkedInUrl}
-          stackOverflowUrl={stackOverflowUrl}
-          wellfoundUrl={wellfoundUrl}
           redditUrl={redditUrl}
-          soundCloudUrl={soundCloudUrl}
           iconSize={iconSize}
         />
         <Experience experience={gitHubReadmeMarkdownJSON['experience']} />
