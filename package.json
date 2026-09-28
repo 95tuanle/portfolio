@@ -35,7 +35,7 @@
     "prettier": "^3.6.2",
     "sharp": "^0.35.4",
     "tailwindcss": "^4.1.17",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
